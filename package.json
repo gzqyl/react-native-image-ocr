@@ -1,0 +1,100 @@
+{
+  "name": "@gzqyl/react-native-image-ocr",
+  "version": "1.0.1",
+  "description": "For MLKIT Image",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "react_native_image_ocr.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "pods": "cd example && pod-install --quiet"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "ocr"
+  ],
+  "repository": "https://github.com/gzqyl/react-native-image-ocr",
+  "author": "Allen <allen.gzqyl@gmail.com> (https://github.com/gzqyl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gzqyl/react-native-image-ocr/issues"
+  },
+  "homepage": "https://github.com/gzqyl/react-native-image-ocr#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-native": "0.72.3",
+    "commitlint": "^11.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.0",
+    "pod-install": "^0.1.38",
+    "prettier": "^2.0.5",
+    "react": "18.2.0",
+    "react-native": "0.72.5",
+    "react-native-builder-bob": "^0.18.0",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react-native": ">= 0.60.0",
+    "@gzqyl/react-native-userdefault": "*"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

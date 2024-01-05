@@ -4,7 +4,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <VisionKit/VisionKit.h>
 #import <Vision/Vision.h>
-#import <react_native_userdefault/react_native_userdefault-Swift.h>
+#import <react_native_userdefault/RNUserDefault.h>
 
 @import MLKitCommon;
 @import MLKitVision;
@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(recognizeImage:(NSString *)url
     
   MLKTextRecognizer *textRecognizer;
     
-  NSString* localLang = [[[RNUserDefaultSwift alloc] init] getMLKitLangSwift];
+  NSString* localLang = [RNUserDefault getMLKitLangSwift];
     
   if ([localLang isEqualToString:@"zh"]){
       MLKChineseTextRecognizerOptions *chineseOptions = [[MLKChineseTextRecognizerOptions alloc] init];

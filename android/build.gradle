@@ -49,6 +49,8 @@ dependencies {
   // noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-android:+"
   implementation "androidx.camera:camera-core:1.1.0"
+
+  implementation project(path: ':gzqyl_react-native-userdefault')
   
   implementation 'com.google.mlkit:text-recognition:16.0.0'
 

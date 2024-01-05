@@ -1,27 +1,20 @@
 package com.github.gzqyl.rnimageocr;
-// import com.facebook.react.ReactPackage;
-// import com.facebook.react.bridge.NativeModule;
-// import com.facebook.react.bridge.ReactApplicationContext;
-// import com.facebook.react.uimanager.ViewManager;
-// import com.github.gzqyl.rnocr.RNOCRModule;
 
-// import java.util.ArrayList;
-// import java.util.Collections;
-// import java.util.List;
+import android.view.View
+import com.facebook.react.ReactPackage
+import com.facebook.react.bridge.NativeModule
+import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.uimanager.ReactShadowNode
+import com.facebook.react.uimanager.ViewManager
 
-// public class RNOCRPackage implements ReactPackage {
-//     @Override
-//     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-//         return Collections.emptyList();
-//     }
+class RNOCRPackage : ReactPackage {
 
-//     @Override
-//     public List<NativeModule> createNativeModules(
-//             ReactApplicationContext reactContext) {
-//         List<NativeModule> modules = new ArrayList<>();
-//        modules.add(new RNOCRModule(reactContext));
+    override fun createViewManagers(
+        reactContext: ReactApplicationContext
+    ): MutableList<ViewManager<View, ReactShadowNode<*>>> = mutableListOf()
 
-//         return modules;
-//     }
+    override fun createNativeModules(
+        reactContext: ReactApplicationContext
+    ): MutableList<NativeModule> = listOf(RNOCRModule(reactContext)).toMutableList()
 
-// }
+}
